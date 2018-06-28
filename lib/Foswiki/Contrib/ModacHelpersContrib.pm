@@ -12,20 +12,6 @@ our $RELEASE = "1.0";
 our $SHORTDESCRIPTION = 'This contrib provides several helper functions.';
 our $NO_PREFS_IN_TOPIC = 1;
 
-sub maintenanceHandler {
-    Foswiki::Plugins::MaintenancePlugin::registerCheck("ModacHelpersContrib:Move to ModacHelpersPlugin", {
-        name => "Move to the more recent ModacHelpersPlugin",
-        description => "Uninstall ModacHelpersContrib and install ModacHelpersPlugin",
-        check => sub {
-            return {
-                result => 1,
-                priority => $Foswiki::Plugins::MaintenancePlugin::ERROR,
-                solution => "Please uninstall ModacHelpersContrib and install the more recent ModacHelpersPlugin"
-            }
-        }
-    });
-}
-
 sub updateTopicLinks {
   my ($oldWeb, $oldTopic, $newWeb, $newTopic) = @_;
 
